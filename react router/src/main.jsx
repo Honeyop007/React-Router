@@ -6,6 +6,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './components/Home/home.jsx';
 import About from './components/About/about.jsx';
 import Contact from './components/ContactUs/contact.jsx';
+import User from './components/User/user.jsx';
+import Github, { githubinfo } from './components/Github/github.jsx';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +25,15 @@ const router = createBrowserRouter([
       {
         path: 'contact',
         element: <Contact />
+      },
+      {
+        path: 'user/:userid',
+        element: <User/>
+      },
+      {
+        loader: githubinfo,
+        path: 'github',
+        element: <Github/>
       }
         ]
   }
